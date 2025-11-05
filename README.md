@@ -1,6 +1,6 @@
 # Resume Portfolio Application
 
-A modern resume and portfolio application built with .NET 8 and React, showcasing your skills, projects, experience, and education.
+A modern resume and portfolio application built with .NET 8 and React, showcasing skills, projects, experience, and education.
 
 ## Features
 
