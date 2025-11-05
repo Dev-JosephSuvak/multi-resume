@@ -4,11 +4,11 @@ A modern resume and portfolio application built with .NET 8 and React, showcasin
 
 ## Features
 
-- 🎨 Modern, responsive design
-- ⚡ Fast development with Vite
-- 🔄 RESTful API with ASP.NET Core
-- 💼 Professional resume layout
-- 📱 Mobile-friendly
+- Modern, responsive design
+- Fast development with Vite
+- RESTful API with ASP.NET Core
+- Professional resume layout
+-  Mobile-friendly
 
 ## Tech Stack
 
