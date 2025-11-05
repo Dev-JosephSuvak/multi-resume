@@ -1,0 +1,78 @@
+import { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
+import "./App.css";
+
+function App() {
+  const [resumeData, setResumeData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/resume")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch resume data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setResumeData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="spinner"></div>
+        <p>Loading resume...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <h2>Error</h2>
+        <p>{error}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="app">
+      <Header personalInfo={resumeData.personalInfo} />
+      <main className="main-content">
+        <section id="about" className="section">
+          <div className="container">
+            <h2 className="section-title">About Me</h2>
+            <p className="summary">{resumeData.personalInfo.summary}</p>
+          </div>
+        </section>
+
+        <Skills skills={resumeData.skills} />
+        <Projects projects={resumeData.projects} />
+        <Experience experiences={resumeData.experiences} />
+        <Education education={resumeData.education} />
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <p>
+            &copy; 2025 {resumeData.personalInfo.name}. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
