@@ -15,8 +15,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        // In production, this would serve the built React app
-        // For development, you'll run Vite separately
         return View();
     }
 

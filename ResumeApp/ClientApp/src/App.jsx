@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./firebase";
 import Header from "./components/Header";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -12,21 +14,25 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/api/resume")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch resume data");
+    const fetchResumeData = async () => {
+      try {
+        const docRef = doc(db, "resume", "data");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setResumeData(docSnap.data());
+        } else {
+          throw new Error("Resume data not found in Firebase");
         }
-        return response.json();
-      })
-      .then((data) => {
-        setResumeData(data);
-        setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
+        console.error("Error fetching resume data:", err);
         setError(err.message);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchResumeData();
   }, []);
 
   if (loading) {

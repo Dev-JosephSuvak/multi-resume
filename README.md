@@ -1,5 +1,6 @@
 # Resume Portfolio Application
 
+<<<<<<< Updated upstream
 A modern resume and portfolio application built with .NET 8 and React, showcasing skills, projects, experience, and education.
 
 ## Features
@@ -9,22 +10,101 @@ A modern resume and portfolio application built with .NET 8 and React, showcasin
 - RESTful API with ASP.NET Core
 - Professional resume layout
 -  Mobile-friendly
+=======
+A modern resume and portfolio application built with .NET 8 and React, with dual deployment options: full-stack .NET + React locally, or static React app with Firebase backend on Netlify.
+
+## Features
+
+- 🎨 Modern, responsive design
+- ⚡ Fast development with Vite
+- � Firebase Firestore backend for static deployment
+- �🔄 Alternative RESTful API with ASP.NET Core
+- 💼 Professional resume layout
+- 📱 Mobile-friendly
+- 🌐 Netlify-ready static deployment
+>>>>>>> Stashed changes
 
 ## Tech Stack
 
-- **Backend**: .NET 8, ASP.NET Core MVC
+- **Backend**:
+  - Option 1: .NET 8, ASP.NET Core MVC (local development)
+  - Option 2: Firebase Firestore (static/Netlify deployment)
 - **Frontend**: React 19, Vite
 - **Styling**: Modern CSS with CSS Variables
+- **Database**: Firebase Firestore
+- **Deployment**: Netlify (static) or any .NET hosting platform
 
 ## Getting Started
 
 ### Prerequisites
 
-- .NET 8 SDK
+- .NET 8 SDK (for local .NET development)
 - Node.js 24 LTS (or newer)
 - npm
+- Firebase account (for static deployment)
 
-### Running in Development Mode
+### Option 1: Running with Firebase (Netlify/Static Deployment)
+
+This is the recommended approach for deploying to Netlify or other static hosting platforms.
+
+#### Setup Firebase
+
+1. **Create Firebase Project**:
+
+   - Go to https://console.firebase.google.com/
+   - Create a new project
+   - Enable Firestore Database (production mode)
+
+2. **Set Firestore Security Rules**:
+
+   ```
+   rules_version = '2';
+   service cloud.firestore {
+     match /databases/{database}/documents {
+       match /resume/{document=**} {
+         allow read: if true;
+         allow write: if false;
+       }
+     }
+   }
+   ```
+
+3. **Get Service Account Key**:
+
+   - Project Settings → Service Accounts
+   - Generate new private key
+   - Save as `ResumeApp/scripts/serviceAccountKey.json`
+
+4. **Seed Firebase with Resume Data**:
+
+   ```bash
+   cd ResumeApp
+   npm install
+   npm run seed:firebase
+   ```
+
+5. **Build and Deploy**:
+
+   ```bash
+   npm run build
+   ```
+
+   The built files will be in `wwwroot/dist/`.
+
+#### Deploy to Netlify
+
+1. Push your code to GitHub
+2. Go to https://netlify.com and create new site
+3. Connect your GitHub repository
+4. Netlify will auto-detect the `netlify.toml` config:
+   - **Base directory**: `ResumeApp`
+   - **Build command**: `npm run build`
+   - **Publish directory**: `wwwroot/dist`
+5. Deploy!
+
+Your resume will fetch data directly from Firebase Firestore.
+
+### Option 2: Running in Local Development Mode (.NET Backend)
 
 You'll need to run both the .NET backend and the React frontend:
 
@@ -69,6 +149,15 @@ The app will serve the built React files from `wwwroot/dist/`.
 
 ## Customizing Your Resume
 
+### For Firebase/Static Deployment:
+
+1. **Edit Resume Data**: Update `ClientApp/src/data/resumeData.json`
+2. **Re-seed Firebase**: Run `npm run seed:firebase`
+3. **Rebuild**: Run `npm run build`
+4. **Deploy**: Push to GitHub (Netlify will auto-deploy)
+
+### For .NET Backend:
+
 Edit the `ResumeController.cs` file in the `Controllers` folder to update your:
 
 - Personal information
@@ -86,14 +175,20 @@ ResumeApp/
 ├── ClientApp/              # React application
 │   ├── src/
 │   │   ├── components/    # React components
+│   │   ├── data/          # Resume data (JSON)
+│   │   │   └── resumeData.json
+│   │   ├── firebase.js    # Firebase config
 │   │   ├── App.jsx        # Main app component
 │   │   ├── main.jsx       # Entry point
 │   │   ├── App.css        # Main styles
 │   │   └── index.css      # Global styles
 │   └── index.html         # HTML template
+├── scripts/               # Utility scripts
+│   ├── seedFirebase.js    # Firebase seeding script
+│   └── serviceAccountKey.json # Firebase credentials (gitignored)
 ├── Controllers/           # .NET controllers
 │   ├── HomeController.cs
-│   └── ResumeController.cs # Resume API
+│   └── ResumeController.cs # Resume API (.NET version)
 ├── Models/               # C# data models
 │   └── ResumeModels.cs
 ├── Views/                # Razor views
@@ -103,7 +198,8 @@ ResumeApp/
 │   └── dist/             # Built React app (after npm run build)
 ├── Program.cs            # .NET app configuration
 ├── vite.config.js        # Vite configuration
-└── package.json          # npm dependencies
+├── package.json          # npm dependencies
+└── netlify.toml          # Netlify deployment config
 ```
 
 ## Available Scripts
@@ -111,8 +207,9 @@ ResumeApp/
 ### npm scripts
 
 - `npm run dev` - Start Vite development server
-- `npm run build` - Build React app for production
+- `npm run build` - Build React app for production (with Firebase)
 - `npm run preview` - Preview production build locally
+- `npm run seed:firebase` - Seed Firebase Firestore with resume data
 
 ### .NET commands
 
@@ -122,7 +219,14 @@ ResumeApp/
 
 ## API Endpoints
 
+### .NET Backend (Local Development)
+
 - `GET /api/resume` - Get complete resume data
+
+### Firebase Backend (Static Deployment)
+
+- Data stored in Firestore: `resume/data` document
+- Accessed via Firebase SDK in `src/firebase.js`
 
 ## Customization Tips
 

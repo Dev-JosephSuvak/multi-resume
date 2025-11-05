@@ -8,17 +8,15 @@ export default defineConfig({
     outDir: '../wwwroot/dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: './ClientApp/index.html'
+      input: './ClientApp/index.html',
+      output: {
+        entryFileNames: 'assets/index.js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]'
+      }
     }
   },
   server: {
-    port: 5173,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5062',
-        changeOrigin: true,
-        secure: false
-      }
-    }
+    port: 5173
   }
 })

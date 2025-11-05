@@ -32,6 +32,10 @@ bld/
 .env.test.local
 .env.production.local
 
+# Firebase service account keys
+serviceAccountKey.json
+*firebase-adminsdk*.json
+
 # OS files
 .DS_Store
 Thumbs.db
