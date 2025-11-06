@@ -3,6 +3,9 @@
   command = "npm run build"
   publish = "wwwroot/dist"
 
+[build.environment]
+  NODE_VERSION = "20"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

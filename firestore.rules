@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Resume data - read-only for all users
+    match /resume/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    // Service requests - allow creation by anyone, but no read/update/delete
+    match /serviceRequests/{requestId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+    
+    // References - allow creation by anyone, read only if approved
+    match /references/{referenceId} {
+      allow create: if true;
+      allow read: if resource.data.approved == true;
+      allow update, delete: if false;
+    }
+  }
+}

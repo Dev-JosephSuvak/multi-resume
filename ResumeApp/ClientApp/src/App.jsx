@@ -6,12 +6,20 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import References from "./components/References";
+import ServiceRequestForm from "./components/ServiceRequestForm";
+import ReferenceForm from "./components/ReferenceForm";
 import "./App.css";
 
 function App() {
   const [resumeData, setResumeData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isServiceFormOpen, setIsServiceFormOpen] = useState(false);
+  const [isReferenceFormOpen, setIsReferenceFormOpen] = useState(false);
+  
+  // Detect if running with .NET backend (via proxy) or static (Netlify)
+  const useApi = window.location.hostname === "localhost" && window.location.port !== "5173";
 
   useEffect(() => {
     const fetchResumeData = async () => {
@@ -55,7 +63,10 @@ function App() {
 
   return (
     <div className="app">
-      <Header personalInfo={resumeData.personalInfo} />
+      <Header
+        personalInfo={resumeData.personalInfo}
+        onRequestServices={() => setIsServiceFormOpen(true)}
+      />
       <main className="main-content">
         <section id="about" className="section">
           <div className="container">
@@ -65,8 +76,12 @@ function App() {
         </section>
 
         <Skills skills={resumeData.skills} />
-        <Projects projects={resumeData.projects} />
+        <References 
+          useApi={useApi} 
+          onWriteReference={() => setIsReferenceFormOpen(true)} 
+        />
         <Experience experiences={resumeData.experiences} />
+        <Projects projects={resumeData.projects} />
         <Education education={resumeData.education} />
       </main>
 
@@ -77,6 +92,19 @@ function App() {
           </p>
         </div>
       </footer>
+
+      <ServiceRequestForm
+        isOpen={isServiceFormOpen}
+        onClose={() => setIsServiceFormOpen(false)}
+        calendlyUrl={resumeData.personalInfo.calendly}
+        useApi={useApi}
+      />
+
+      <ReferenceForm
+        isOpen={isReferenceFormOpen}
+        onClose={() => setIsReferenceFormOpen(false)}
+        useApi={useApi}
+      />
     </div>
   );
 }
