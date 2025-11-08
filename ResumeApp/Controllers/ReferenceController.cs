@@ -73,8 +73,7 @@ namespace ResumeApp.Controllers
             };
         }
 
-        // GET: api/reference/all - Get all references (for admin)
-        [HttpGet("all")]
+                [HttpGet("all")]
         public async Task<IActionResult> GetAllReferences()
         {
             try
@@ -115,8 +114,7 @@ namespace ResumeApp.Controllers
             }
         }
 
-        // POST: api/reference - Submit a new reference
-        [HttpPost]
+                [HttpPost]
         public async Task<IActionResult> SubmitReference([FromBody] Reference reference)
         {
             try
@@ -198,8 +196,7 @@ namespace ResumeApp.Controllers
             }
         }
 
-        // PATCH: api/reference/{id}/reject - Reject/unapprove a reference
-        [HttpPatch("{id}/reject")]
+                [HttpPatch("{id}/reject")]
         public async Task<IActionResult> RejectReference(string id)
         {
             try
@@ -233,8 +230,7 @@ namespace ResumeApp.Controllers
             }
         }
 
-        // DELETE: api/reference/{id} - Delete a reference
-        [HttpDelete("{id}")]
+                [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReference(string id)
         {
             try

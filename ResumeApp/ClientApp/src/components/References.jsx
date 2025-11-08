@@ -75,32 +75,36 @@ function References({ useApi = false, onWriteReference }) {
       console.log("Fetching references, useApi:", useApi);
       const data = useApi ? await fetchViaApi() : await fetchViaFirebase();
       console.log("Fetched references:", data);
-      
+
       // Sort: Managers first, then by date
       const sortedData = data.sort((a, b) => {
         // Priority order: manager > direct-report > colleague > client > mentor > other
         const relationshipPriority = {
-          'manager': 1,
-          'direct-report': 2,
-          'colleague': 3,
-          'client': 4,
-          'mentor': 5,
-          'other': 6
+          manager: 1,
+          "direct-report": 2,
+          colleague: 3,
+          client: 4,
+          mentor: 5,
+          other: 6,
         };
-        
-        const aPriority = relationshipPriority[a.relationship?.toLowerCase()] || 99;
-        const bPriority = relationshipPriority[b.relationship?.toLowerCase()] || 99;
-        
+
+        const aPriority =
+          relationshipPriority[a.relationship?.toLowerCase()] || 99;
+        const bPriority =
+          relationshipPriority[b.relationship?.toLowerCase()] || 99;
+
         if (aPriority !== bPriority) {
           return aPriority - bPriority;
         }
-        
+
         // If same relationship, sort by date (newest first)
-        const aTime = a.createdAt?.toDate?.() || new Date(a.createdAt) || new Date(0);
-        const bTime = b.createdAt?.toDate?.() || new Date(b.createdAt) || new Date(0);
+        const aTime =
+          a.createdAt?.toDate?.() || new Date(a.createdAt) || new Date(0);
+        const bTime =
+          b.createdAt?.toDate?.() || new Date(b.createdAt) || new Date(0);
         return bTime - aTime;
       });
-      
+
       setReferences(sortedData);
     } catch (err) {
       console.error("Error fetching references:", err);
@@ -119,7 +123,9 @@ function References({ useApi = false, onWriteReference }) {
 
   const previousReference = () => {
     setDirection("prev");
-    setCurrentIndex((prev) => (prev - 1 + references.length) % references.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + references.length) % references.length
+    );
     setIsPaused(true);
     setTimeout(() => setIsPaused(false), 1000);
   };
@@ -186,7 +192,9 @@ function References({ useApi = false, onWriteReference }) {
             {references.map((reference, index) => (
               <div
                 key={reference.id || index}
-                className={`reference-card ${index === currentIndex ? "active" : ""}`}
+                className={`reference-card ${
+                  index === currentIndex ? "active" : ""
+                }`}
               >
                 <div className="reference-rating">
                   {[...Array(5)].map((_, i) => (

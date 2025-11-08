@@ -2,6 +2,7 @@ using Google.Cloud.Firestore;
 
 namespace ResumeApp.Models.Entities;
 
+[FirestoreData]
 public class Experience
 {
     [FirestoreProperty("company")]

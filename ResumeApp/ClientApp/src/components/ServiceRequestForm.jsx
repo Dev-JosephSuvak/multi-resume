@@ -53,7 +53,6 @@ function ServiceRequestForm({ isOpen, onClose, calendlyUrl, useApi = false }) {
     setError("");
 
     try {
-      // Use .NET API if running locally, otherwise use Firebase directly
       if (useApi) {
         await submitViaApi();
       } else {
@@ -62,12 +61,10 @@ function ServiceRequestForm({ isOpen, onClose, calendlyUrl, useApi = false }) {
 
       setIsSuccess(true);
 
-      // Wait 2 seconds then open Calendly
       setTimeout(() => {
         if (window.Calendly && calendlyUrl) {
           window.Calendly.initPopupWidget({ url: calendlyUrl });
         }
-        // Close modal after another 2 seconds
         setTimeout(() => {
           handleClose();
         }, 2000);

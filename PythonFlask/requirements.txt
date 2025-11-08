@@ -1,0 +1,5 @@
+Flask==3.0.0
+flask-cors==4.0.0
+google-cloud-firestore==2.14.0
+google-auth==2.25.2
+python-dotenv==1.0.0

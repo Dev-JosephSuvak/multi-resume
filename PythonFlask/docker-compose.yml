@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  python-flask-api:
+    build: .
+    container_name: resume-flask-api
+    ports:
+      - "5065:5065"
+    environment:
+      - FLASK_ENV=production
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/serviceAccountKey.json
+    volumes:
+      - ./serviceAccountKey.json:/app/serviceAccountKey.json:ro
+    restart: unless-stopped
+    networks:
+      - resume-network
+
+networks:
+  resume-network:
+    driver: bridge

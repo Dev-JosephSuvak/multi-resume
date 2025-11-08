@@ -61,7 +61,6 @@ function ReferenceForm({ isOpen, onClose, useApi = false }) {
 
       setIsSuccess(true);
 
-      // Close modal after 3 seconds
       setTimeout(() => {
         handleClose();
       }, 3000);
@@ -101,7 +100,8 @@ function ReferenceForm({ isOpen, onClose, useApi = false }) {
           <>
             <h2 className="modal-title">Write a Reference</h2>
             <p className="modal-subtitle">
-              Share your experience working with me. Your reference will be reviewed before being published.
+              Share your experience working with me. Your reference will be
+              reviewed before being published.
             </p>
 
             <form onSubmit={handleSubmit} className="service-request-form">

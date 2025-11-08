@@ -1,10 +1,8 @@
-# Node.js
 node_modules/
 package-lock.json
 dist/
 .vite/
 
-# .NET
 bin/
 obj/
 *.user
@@ -13,7 +11,6 @@ obj/
 .vs/
 *.log
 
-# Build output
 wwwroot/dist/
 wwwroot/profile.jpeg
 wwwroot/resume.pdf
@@ -27,18 +24,49 @@ bld/
 [Bb]in/
 [Oo]bj/
 
-# Environment files (contain secrets)
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Firebase service account keys
 serviceAccountKey.json
 *firebase-adminsdk*.json
 
-# OS files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+target/
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+*.war
+*.ear
+*.class
+.mvn/
+mvnw
+mvnw.cmd
+
+.m2/settings.xml.hca-backup
+
+.idea/
+*.iml
+*.iws
+.vscode/
+*.code-workspace
+
 .DS_Store
 Thumbs.db
 *.swp

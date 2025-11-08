@@ -2,14 +2,11 @@ using Google.Cloud.Firestore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Firestore
 var projectId = "joseph-suvak-resume";
 var credentialPath = Path.Combine(Directory.GetCurrentDirectory(), "scripts", "serviceAccountKey.json");
 
-// Set the environment variable for Google credentials
 Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentialPath);
 
-// Register FirestoreDb
 builder.Services.AddSingleton(_ => FirestoreDb.Create(projectId));
 
 builder.Services.AddControllersWithViews();

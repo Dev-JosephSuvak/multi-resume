@@ -20,21 +20,21 @@ const resumeData = JSON.parse(
   readFileSync(join(__dirname, '../ClientApp/src/data/resumeData.json'), 'utf8')
 );
 
-async function seedFirestore() {
+async function seedResumeData() {
   try {
-    console.log('🌱 Starting Firestore seeding...');
-
-    // Create a single document with all resume data
-    await db.collection('resume').doc('data').set(resumeData);
-
-    console.log('✅ Successfully seeded Firestore with resume data.');
-    console.log('📍 Data location: resume/data');
+    console.log('Starting to seed resume data...');
     
-    process.exit(0);
+    const docRef = db.collection('resume').doc('data');
+    await docRef.set(resumeData);
+    console.log('Resume data seeded successfully!');
   } catch (error) {
-    console.error('❌ Error seeding Firestore:', error);
-    process.exit(1);
+    console.error('Error seeding resume data:', error);
   }
+}
+
+async function seedFirestore() {
+  await seedResumeData();
+  process.exit(0);
 }
 
 seedFirestore();

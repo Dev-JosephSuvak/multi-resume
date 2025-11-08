@@ -17,9 +17,9 @@ function App() {
   const [error, setError] = useState(null);
   const [isServiceFormOpen, setIsServiceFormOpen] = useState(false);
   const [isReferenceFormOpen, setIsReferenceFormOpen] = useState(false);
-  
-  // Detect if running with .NET backend (via proxy) or static (Netlify)
-  const useApi = window.location.hostname === "localhost" && window.location.port !== "5173";
+
+  const useApi =
+    window.location.hostname === "localhost" && window.location.port !== "5173";
 
   useEffect(() => {
     const fetchResumeData = async () => {
@@ -76,9 +76,9 @@ function App() {
         </section>
 
         <Skills skills={resumeData.skills} />
-        <References 
-          useApi={useApi} 
-          onWriteReference={() => setIsReferenceFormOpen(true)} 
+        <References
+          useApi={useApi}
+          onWriteReference={() => setIsReferenceFormOpen(true)}
         />
         <Experience experiences={resumeData.experiences} />
         <Projects projects={resumeData.projects} />

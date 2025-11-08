@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  java-spring-api:
+    build: .
+    container_name: resume-java-api
+    ports:
+      - "5064:5064"
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/serviceAccountKey.json
+    volumes:
+      - ./serviceAccountKey.json:/app/serviceAccountKey.json:ro
+    restart: unless-stopped
+    networks:
+      - resume-network
+
+networks:
+  resume-network:
+    driver: bridge

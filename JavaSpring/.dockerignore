@@ -1,0 +1,25 @@
+# Docker ignore file for Java Spring Boot
+target/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE
+.idea/
+*.iml
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test
+*.class

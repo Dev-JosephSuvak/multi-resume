@@ -22,17 +22,14 @@ namespace ResumeApp.Controllers
         {
             try
             {
-                // Fetch data from Firestore
                 var docRef = _firestoreDb.Collection("resume").Document("data");
                 var snapshot = await docRef.GetSnapshotAsync();
 
                 if (!snapshot.Exists)
                 {
-                    _logger.LogWarning("Resume data not found in Firestore");
-                    return NotFound("Resume data not found");
+                    return NotFound();
                 }
 
-                // Convert Firestore document to ResumeData
                 var resumeData = snapshot.ConvertTo<ResumeData>();
                 return Ok(resumeData);
             }

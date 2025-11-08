@@ -2,19 +2,17 @@ import React, { useEffect } from "react";
 
 function Header({ personalInfo, onRequestServices }) {
   useEffect(() => {
-    // Load Font Awesome for social icons
     const fontAwesomeLink = document.createElement("link");
     fontAwesomeLink.rel = "stylesheet";
-    fontAwesomeLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
+    fontAwesomeLink.href =
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
     document.head.appendChild(fontAwesomeLink);
 
-    // Load Calendly widget CSS
     const link = document.createElement("link");
     link.href = "https://assets.calendly.com/assets/external/widget.css";
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
-    // Load Calendly widget script
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
@@ -32,7 +30,6 @@ function Header({ personalInfo, onRequestServices }) {
     document.body.appendChild(script);
 
     return () => {
-      // Cleanup
       document.head.removeChild(fontAwesomeLink);
       document.head.removeChild(link);
       document.body.removeChild(script);
@@ -98,7 +95,11 @@ function Header({ personalInfo, onRequestServices }) {
                   <span className="link-text">GitHub</span>
                 </a>
               )}
-              <button onClick={onRequestServices} className="social-link" title="Request Services">
+              <button
+                onClick={onRequestServices}
+                className="social-link"
+                title="Request Services"
+              >
                 <i className="fas fa-briefcase"></i>
                 <span className="link-text">Request Services</span>
               </button>

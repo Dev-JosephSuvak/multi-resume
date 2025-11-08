@@ -27,23 +27,19 @@ namespace ResumeApp.Controllers
                     return BadRequest("Service request data is required");
                 }
 
-                // Validate required fields
-                if (string.IsNullOrWhiteSpace(request.Name) ||
-                    string.IsNullOrWhiteSpace(request.Email) ||
+                if (string.IsNullOrWhiteSpace(request.Name) || 
+                    string.IsNullOrWhiteSpace(request.Email) || 
                     string.IsNullOrWhiteSpace(request.ProjectType) ||
-                    string.IsNullOrWhiteSpace(request.Timeline) ||
                     string.IsNullOrWhiteSpace(request.Description))
                 {
-                    return BadRequest("Name, Email, Project Type, Timeline, and Description are required");
+                    return BadRequest(new { error = "Missing required fields" });
                 }
 
-                // Set timestamp and status
-                request.CreatedAt = Timestamp.GetCurrentTimestamp();
-                request.Status = "new";
+                request.CreatedAt = Timestamp.FromDateTime(DateTime.UtcNow);
+                request.Status = "pending";
 
-                // Save to Firestore
-                CollectionReference collection = _firestoreDb.Collection("serviceRequests");
-                DocumentReference docRef = await collection.AddAsync(request);
+                var docRef = _firestoreDb.Collection("serviceRequests").Document();
+                await docRef.SetAsync(request);
 
                 _logger.LogInformation($"Service request created with ID: {docRef.Id}");
 
