@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 
 function Header({ personalInfo, onRequestServices }) {
+  const resumeHref = import.meta.env.VITE_RESUME_VERSION
+    ? `/resume.pdf?v=${encodeURIComponent(import.meta.env.VITE_RESUME_VERSION)}`
+    : "/resume.pdf";
+
   useEffect(() => {
     const fontAwesomeLink = document.createElement("link");
     fontAwesomeLink.rel = "stylesheet";
@@ -63,7 +67,7 @@ function Header({ personalInfo, onRequestServices }) {
             </div>
             <div className="social-links">
               <a
-                href="/resume.pdf"
+                href={resumeHref}
                 download="Joseph_Suvak_Resume.pdf"
                 className="social-link"
                 title="Download Resume"

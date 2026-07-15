@@ -1,6 +1,6 @@
 [build]
   base = "ResumeApp"
-  command = "npm run build"
+  command = "VITE_RESUME_VERSION=$COMMIT_REF npm run build"
   publish = "wwwroot/dist"
 
 [build.environment]
@@ -10,3 +10,8 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/resume.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
