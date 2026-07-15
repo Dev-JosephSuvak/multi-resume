@@ -1,133 +1,183 @@
 {
     "personalInfo": {
         "name": "R. Joseph Suvak, Jr., MSITM, MBA",
-        "title": "(Multi) Full-Stack Developer | Software Engineer",
+        "title": "QA & Software Engineering Lead",
         "email": "rjsuvakjr@gmail.com",
         "phone": "936-445-8449",
         "linkedIn": "linkedin.com/in/joseph-suvak-msitm",
         "gitHub": "github.com/dev-JosephSuvak",
         "calendly": "https://calendly.com/rjsuvakjr/interview",
-        "location": "Christiana, TN",
-        "summary": "Innovative and results-driven Full-Stack Developer with a strong focus on enterprise modernization, automation, and process improvement. Experienced across the full SDLC with expertise in Java, .NET, Node.js, React, Vue, Angular, and SQL. Proven success in leading mainframe migrations, building scalable APIs, mentoring teams, and aligning technical strategy with business goals."
+        "location": "East Texas (North Houston)",
+        "summary": "QA and software engineering lead with deep full-stack experience across enterprise modernization, API delivery, and regulated healthcare systems. Proven success driving automation-first quality practices, improving defect prevention, and strengthening release readiness through structured test strategy, CI/CD quality gates, and cross-functional collaboration. Hands-on across Java, .NET, Node.js, Playwright, Jest, Selenium, SQL, and cloud-native delivery workflows."
     },
     "skills": [
         {
-            "category": "Core Skills",
+            "category": "QA Leadership & Delivery",
             "items": [
-                "Jira",
-                "Azure DevOps (ADO)",
+                "QA Strategy & Roadmaps",
+                "Test Planning & Estimation",
+                "Risk-Based Testing",
+                "Release Readiness Governance",
+                "Defect Triage & Root Cause Analysis",
+                "Quality Metrics & KPI Reporting",
+                "Cross-Functional Stakeholder Management",
+                "Team Mentorship & Enablement",
                 "Kanban",
                 "Agile",
                 "Scrum",
-                "Single Page App Architecture",
-                "SQL",
-                "Test-Driven Development",
-                "HTML5 / CSS / JavaScript",
-                "REST API Development",
-                "Automation",
-                "CI/CD",
-                "Microservices",
-                "Application Modernization",
-                "Cloud Computing (AWS / GCP / Azure)",
-                "Generative AI Integration",
-                "Data Visualization (Power BI / Tableau)",
-                "Data Integration & ETL",
-                "Service to Service Communication (REST / SOAP / gRPC)"
+                "Jira",
+                "Azure DevOps (ADO)",
+                "Confluence"
             ]
         },
         {
-            "category": "Programming & Frameworks",
+            "category": "Quality Engineering & Automation",
+            "items": [
+                "Test Automation Framework Design",
+                "UI Automation (Playwright, Selenium)",
+                "API Automation (Jest, Axios, Postman)",
+                "Regression, Smoke, and Integration Testing",
+                "CI/CD Quality Gates",
+                "Test-Driven Development",
+                "Shift-Left Testing",
+                "UAT Coordination",
+                "Performance & Reliability Validation",
+                "SQL",
+                "REST API Validation",
+                "Service to Service Communication (REST / SOAP / gRPC)",
+                "Data Validation & ETL Testing"
+            ]
+        },
+        {
+            "category": "Programming & Platforms",
             "items": [
                 "Java",
                 "Spring Boot",
                 "C#",
                 ".NET",
                 "ASP.NET",
-                " .NET Core",
+                ".NET Core",
                 "Python",
                 "TypeScript",
                 "JavaScript",
+                "Node.js",
                 "React",
                 "Angular",
                 "Vue.js",
                 "Ember.js",
-                "Node.js",
-                "Express",
-                "Maven",
-                "NuGet",
                 "Flask",
-                "Next.js",
-                "Nuxt.js"
+                "HTML5 / CSS / JavaScript",
+                "SQL Server",
+                "DB2",
+                "PostgreSQL",
+                "Microservices",
+                "Application Modernization",
+                "Cloud Computing (AWS / GCP / Azure)"
             ]
         },
         {
-            "category": "Tools, Dependencies, & Tool Platforms",
+            "category": "Tools, Dependencies, & Platforms",
             "items": [
                 "Git",
                 "GitLab",
                 "GitHub",
+                "GitHub Actions",
                 "ServiceNow",
                 "VS Code",
                 "IntelliJ",
                 "Visual Studio",
                 "Azure",
-                "Google Analytics",
                 "Google Cloud",
                 "AWS",
                 "WebSphere",
                 "OpenShift",
-                "Visio",
-                "ServiceNow",
                 "Azure DevOps",
                 "TFS",
                 "Jira",
                 "Confluence",
                 "Postman",
                 "Insomnia",
+                "Jest",
+                "Playwright",
+                "Selenium WebDriver",
                 "Docker",
                 "Kubernetes",
+                "Maven",
+                "NuGet",
                 "PrismaDB"
             ]
         }
     ],
     "experiences": [
         {
-            "company": "Mitsubishi Motors North America (MMNA)",
-            "position": "Software Developer",
-            "duration": "Jan 2023 – November 2025",
-            "location": "Franklin, TN",
+            "company": "Pagewheel",
+            "position": "Full Stack Software Developer",
+            "duration": "March 2023 – Present (Contract)",
+            "location": "Remote",
             "responsibilities": [
-                "Led modernization of legacy Java/JSP internal systems to Angular and Spring Boot.",
-                "Developed and implemented APIs replacing COBOL mainframe ETL pipelines.",
-                "Scoped, planned, and budgeted development workloads using Agile methodologies.",
-                "Created Jira templates and Agile workflows for bug, story, and deployment tracking.",
-                "Mentored developers and served as operational manager for development planning.",
-                "Generated SQL extracts to resolve production issues and guide team analysis.",
-                "Collaborated with cross-functional teams to define requirements and deliver solutions.",
-                "Participated in code reviews and contributed to team knowledge sharing."
+                "Develop AI-powered bot functionality and integrate it into the broader software platform.",
+                "Build and maintain full-stack functionality supporting platform workflows and user-facing capabilities.",
+                "Coordinate frontend, backend, API, and database changes required for platform integrations.",
+                "Develop and validate application functionality across multiple system layers.",
+                "Perform QA testing to identify defects, trace root causes, and implement fixes to stabilize system performance.",
+                "Established practical quality gates for new features, including regression, API, and integration validation before release.",
+                "Troubleshoot defects and production issues affecting application reliability, usability, and performance.",
+                "Work with stakeholders to define requirements, identify risks, and scope technical solutions.",
+                "Support quality improvements through structured testing, technical review, and issue resolution.",
+                "Implement tests into development workflow using Playwright and Jest."
             ],
             "technologies": [
-                "Java",
+                "Playwright",
+                "Jest",
+                "JavaScript",
+                "TypeScript",
+                "Node.js",
+                "REST APIs",
+                "SQL",
+                "CI/CD",
+                "AI Integration"
+            ]
+        },
+        {
+            "company": "Mitsubishi Motors North America (MMNA)",
+            "position": "Software Developer",
+            "duration": "Jan 2023 – Nov 2025",
+            "location": "Franklin, TN",
+            "responsibilities": [
+                "Reverse-engineered COBOL mainframe systems and rebuilt them as Java REST APIs for phased migrations.",
+                "Re-architected the Client Relations system to normalize data flows and reduce duplication.",
+                "Re-wrote BED/FED infrastructure for NHSA reports to improve maintainability and reporting speed.",
+                "Adapted CI/CD packaging workflows for WebSphere/RAD deployments to standardize release processes.",
+                "Built dynamic indexed search functionality in legacy HTML4 pages using server-side Java logic.",
+                "Established Agile/Kanban processes, Jira templates, sprint metrics, and documentation standards.",
+                "Planned and scoped modernization and migration workloads with stakeholders.",
+                "Generated SQL extracts to diagnose production issues and support team re-scoping decisions.",
+                "Drove quality-focused release planning with structured validation criteria for high-risk migrations."
+            ],
+            "technologies": [
+                "Java 8+",
+                "JSP",
                 "Spring Boot",
                 "C#",
                 ".NET",
                 "DB2",
                 "SQL Server",
-                "Angular",
-                "Maven",
                 "GitLab",
-                "Jira"
+                "SVN",
+                "ServiceNow",
+                "Jira",
+                "CI/CD"
             ]
         },
         {
             "company": "Nucamp, Inc.",
             "position": "Software Development Instructor",
-            "duration": "Nov 2021 – Present",
+            "duration": "Nov 2021 – Nov 2023",
             "location": "Remote",
             "responsibilities": [
-                "Delivered full-stack instruction in Node.js, Python, and Flask.",
-                "Graded and coached students on backend development and data visualization.",
-                "Provided curriculum feedback and recommended material improvements."
+                "Delivered multiple cohorts in Full-Stack Web Development covering Node.js, Python Flask, PostgreSQL, REST APIs, and deployment pipelines.",
+                "Provided mentoring, feedback, and coaching to improve student understanding of software architecture and code quality.",
+                "Reviewed student test strategies and reinforced automation and quality-first engineering practices."
             ],
             "technologies": [
                 "Node.js",
@@ -137,31 +187,37 @@
                 "CSS",
                 "JavaScript",
                 "PostgreSQL",
+                "Jest",
+                "Postman",
                 "Discord"
             ]
         },
         {
             "company": "HCA Healthcare, ITG",
-            "position": "Application Developer II / I (Full Stack)",
+            "position": "Application Developer I/II (Full-Stack)",
             "duration": "Jul 2021 – Dec 2022",
             "location": "Nashville, TN",
             "responsibilities": [
-                "Developed UI and refined microservice components in React, Vue, and Ember for the MyHealthOne patient portal.",
-                "Led cross-team coordination, offshore onboarding, and source control process improvements.",
-                "Wrote RESTful APIs and SQL triggers to support enterprise patient applications.",
-                "Resolved build issues in Azure DevOps pipelines to improve local build reliability and multi-team velocity.",
-                "Created reusable ticket templates and documentation for development and QA teams.",
-                "Mentored other developers and conducted code reviews to ensure best practices.",
-                "Established the department's first \"Dev Coffee\" initiative to establish knowledge sharing & coordination between teams. The initiative caught multiple teams' lack of communication early and helped prevent potential production issues."
+                "Led onboarding and cross-team collaboration efforts across patient application teams.",
+                "Built solutions in Ember.js, Vue.js, React, Node.js, Java/Spring, CSS, and SQL.",
+                "Created and expanded API functionality for patient portal services.",
+                "Wrote SQL triggers and refined queries to support user and facility data workflows.",
+                "Resolved DevOps build and compilation issues affecting local development and multi-team delivery.",
+                "Created ticket templates and technical documentation for development, QA, and product teams.",
+                "Aligned implementation plans with security and leadership stakeholders.",
+                "Partnered with QA and product owners to improve defect prevention and release quality outcomes."
             ],
             "technologies": [
                 "React",
                 "Vue",
+                "Ember",
                 "Node.js",
                 "Java 8",
                 "Spring Boot",
                 "Azure DevOps",
-                "T-SQL"
+                "SQL Server",
+                "Git",
+                "Jira"
             ]
         },
         {
@@ -170,18 +226,21 @@
             "duration": "Mar 2020 – Jul 2021",
             "location": "Nashville, TN",
             "responsibilities": [
-                "Developed automated test scripts using Selenium and Jest.",
-                "Tested web apps and APIs across browsers and devices under Agile methodology.",
-                "Configured CI pipelines and YAML-based test automation for GitHub workflows.",
-                "Trained analysts and managers on QA best practices and ticketing systems (Jira, ADO, ALM)."
+                "Automated functional and regression tests for healthcare web applications using Selenium and API testing workflows.",
+                "Developed API test automation in Node.js/Jest and integrated pipelines with GitHub Actions (YAML).",
+                "Trained business analysts to create Agile-ready tickets and improve development intake efficiency.",
+                "Supported defect triage and quality reporting to help teams prioritize high-impact fixes."
             ],
             "technologies": [
                 "C#",
                 "Java",
-                "Selenium",
+                "Selenium WebDriver",
                 "Node.js",
                 "Jest",
-                "SQL"
+                "Axios",
+                "SQL",
+                "GitHub Actions",
+                "Postman"
             ]
         }
     ],
@@ -222,7 +281,9 @@
                 "AWS Suite",
                 "Go-HighLevel",
                 "WordPress",
-                "React"
+                "React",
+                "Jest",
+                "Postman"
             ],
             "highlights": [
                 "Collaborated with marketing stakeholder to identify content needs and define project scope.",
@@ -245,7 +306,9 @@
                 "Python",
                 "Flask",
                 "PostgreSQL",
-                "Google Cloud"
+                "Google Cloud",
+                "Postman",
+                "Pytest"
             ],
             "highlights": [
                 "Negotiated with stakeholders to gather requirements and define project scope.",
@@ -267,7 +330,8 @@
                 "ETL",
                 "Spring Batch",
                 "Talend",
-                "Informatica"
+                "Informatica",
+                "Jest"
             ],
             "highlights": [
                 "Redesigned legacy COBOL ETL into a Java API and nightly SQL-based ETL jobs tailored to individual business needs.",
@@ -284,7 +348,8 @@
                 "AJAX",
                 "jQuery",
                 "ServiceNow",
-                "Mobile"
+                "Mobile",
+                "Selenium"
             ],
             "highlights": [
                 "Built network device scanning prototype with UDP endpoint integration.",
@@ -303,7 +368,8 @@
                 "Selenium",
                 "Microsoft Azure",
                 "Cosmos DB",
-                "Azure Functions"
+                "Azure Functions",
+                "Jest"
             ],
             "highlights": [
                 "Automated image parsing validation across 6 models using runtime scripts.",
