@@ -1,7 +1,7 @@
 {
     "personalInfo": {
         "name": "R. Joseph Suvak, Jr., MSITM, MBA",
-        "title": "QA & Software Engineering Lead",
+        "title": "QA & Full-Stack Software Engineering Lead",
         "email": "rjsuvakjr@gmail.com",
         "phone": "936-445-8449",
         "linkedIn": "linkedin.com/in/joseph-suvak-msitm",
@@ -12,7 +12,7 @@
     },
     "skills": [
         {
-            "category": "QA Leadership & Delivery",
+            "category": "Core Skills",
             "items": [
                 "QA Strategy & Roadmaps",
                 "Test Planning & Estimation",
@@ -64,7 +64,14 @@
                 "React",
                 "Angular",
                 "Vue.js",
+                "Vite.js",
+                "Next.js",
+                "Nuxt.js",
                 "Ember.js",
+                "Node.js",
+                "Express",
+                "Maven",
+                "NuGet",
                 "Flask",
                 "HTML5 / CSS / JavaScript",
                 "SQL Server",
@@ -87,10 +94,13 @@
                 "IntelliJ",
                 "Visual Studio",
                 "Azure",
-                "Google Cloud",
+                "Google Cloud Platform (GCP)",
+                "Google Analytics",
                 "AWS",
                 "WebSphere",
                 "OpenShift",
+                "Visio",
+                "ServiceNow",
                 "Azure DevOps",
                 "TFS",
                 "Jira",
@@ -111,7 +121,7 @@
     "experiences": [
         {
             "company": "Pagewheel",
-            "position": "Full Stack Software Developer",
+            "position": "Full Stack AI Software Developer",
             "duration": "March 2023 – Present (Contract)",
             "location": "Remote",
             "responsibilities": [
